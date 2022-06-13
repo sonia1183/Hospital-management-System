@@ -11,9 +11,14 @@
     <meta name="keywords" content="Medical Care" />
     <meta name="description" content="Team Project" />
     <style>
-      .aa {
-        width: 450px;
-        height: 650px;
+       .aa {
+        width: 650px;
+        height: 1000px;
+        color:black;
+      }
+      table{
+        width:90%;
+        height:90%;
       }
     </style>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -27,54 +32,77 @@
   <body>
     <!-- <img src="../assets/Images/logo.png" class="logo" /> -->
     <div id="nav-placeholder"></div>
-    <div class="aa" style="background-color: rgba(0, 0, 0, 0.5)">
+    <div class="aa" style="border:2px solid black">
       <form method="post" action="SignUpAsPatient.php">
-        <h1 style="color: skyblue">SIGN UP As Patient</h1>
-        <input
-          type="text"
-          name="name"
-          placeholder="Please Enter Your Name...."
-          required
-        /><br /><br />
-        DOB:<input
-          type="date"
-          name="dob"
-          placeholder="Please Enter Your Date Of Birth...."
-          required
-        /><br /><br />
-        <input
-          type="email"
-          name="mail"
-          placeholder="Please Enter Your Mail Id...."
-          required
-        /><br /><br />
-        <input
-          type="text"
-          name="uname"
-          placeholder="Please Enter Username...."
-          required
-        /><br /><br />
-        <input
-          type="password"
-          name="pass"
-          id="pass"
-          placeholder="Please Enter Password...."
-          required
-        /><br /><br />
-        <input
-          type="password"
-          name="repass"
-          id="rpass"
-          placeholder="Please Re Enter Password...."
-          required
-        /><br /><br />
-        <input
-          type="submit"
-          value="SIGN UP"
-          onclick="pass()"
-          name="submit"
-          style="background-color: skyblue"
-        />
+        <h1 style="color: green">SIGN UP As Patient</h1>
+
+        <table>
+          <tr>
+            <td><label>ENTER YOUR NAME : </label></td>
+            <td><input
+              type="text"
+              name="name"
+              placeholder="Please Enter Your Name...."
+              required
+            /></td>
+          </tr>
+          <tr>
+            <td><label>DOB : </label></td>
+            <td><input
+              type="date"
+              name="dob"
+              placeholder="Please Enter Your Date Of Birth...."
+              required
+            /></td>
+          </tr>
+          <tr>
+            <td><label>ENTER YOUR EMAIL : </label></td>
+            <td><input
+              type="email"
+              name="mail"
+              placeholder="Please Enter Your Mail Id...."
+              required
+            /></td>
+          </tr>
+          <tr>
+            <td><label>ENTER UNSERNAME : </label></td>
+            <td><input
+              type="text"
+              name="uname"
+              placeholder="Please Enter Username...."
+              required
+            /></td>
+          </tr>
+          <tr>
+            <td><label>ENTER PASSWORD : </label></td>
+            <td><input
+              type="password"
+              name="pass"
+              id="pass"
+              placeholder="Please Enter Password...."
+              required
+            /></td>
+          </tr>
+          <tr>
+            <td><label>RE-ENTER PASSWORD : </label></td>
+            <td> <input
+              type="password"
+              name="repass"
+              id="rpass"
+              placeholder="Please Re Enter Password...."
+              required
+            /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input
+              type="submit"
+              value="SIGN UP"
+              onclick="pass()"
+              name="submit"
+              style="background-color: green; margin-left: 25%;"
+            /></td>
+          </tr>
+        </table>
         <p style="font-size: 13px">
           Already a User then,Click <a href="../login/LoginAsPatient.html">here</a> to
           log in.

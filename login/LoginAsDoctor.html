@@ -16,6 +16,19 @@
         width: 450px;
         height: 350px;
       }
+
+      .aa input[type="text"],
+      input[type="date"],
+      input[type="email"],
+      input[type="password"],
+      input[type="submit"],
+      input[type="phone"] {
+        width: 350px;
+        height: 50px;
+        border:0;
+        border-radius: 5px;
+        background-color: #baceeccb;
+}
     </style>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
@@ -30,9 +43,9 @@
 
     <div id="nav-placeholder"></div>
 
-    <div class="aa" style="background-color: rgba(0, 0, 0, 0.5)">
+    <div class="aa" style="border: 2px solid black;">
       <form method="post" action="LoginAsDoctor.php">
-        <h1 style="color: skyblue">LOGIN AS DOCTOR</h1>
+        <h1 style="color: green">LOGIN AS DOCTOR</h1>
         <input
           type="text"
           name="uname"
@@ -48,9 +61,9 @@
           value="LOGIN"
           name="submit"
           class="btn_login"
-          style="background-color: skyblue"
+          style="background-color: red"
         />
-        <p style="font-size: 13px">
+        <p style="font-size: 13px; color:black; margin-top: 5px;">
           New User then, Click <a href="../signup/SignUpAsDoctor.html">here</a> to Sign
           in.
         </p>

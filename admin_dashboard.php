@@ -16,7 +16,7 @@
     .upload {
         margin-top: 50px;
         padding: 40px;
-        background-color: rgba(29, 117, 224);
+        background-color: rgba(0, 0, 0, 0.194);
         -webkit-border-radius: 5px;
         -o-border-radius: 5px;
         -moz-border-radius: 5px;
@@ -31,8 +31,8 @@
 
     .main {
         padding: 30px;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.5);
+        color: black;
+        border: 2px solid black;
         -webkit-border-radius: 15px;
         -o-border-radius: 15px;
         -moz-border-radius: 15px;
@@ -42,13 +42,12 @@
         font-size: xx-large;
     }
 
-    h2 {
-        font-size: x-large;
-        padding-left: 15px;
+    h4 {
+        padding-left:20px;
     }
 
     .upload h1 {
-        color: red;
+        color: black;
         font-size: xx-large;
         margin-bottom: 30px;
     }
@@ -99,7 +98,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="main">
-                    <h1 style="color:orange;">Today's Appointments:</h1>
+                    <h1>Today's Appointments:</h1>
                     <?php
                                         
                         require "conn.php";
@@ -110,11 +109,11 @@
                         
                         if ($result->num_rows>0) {
                             while ($row=$result->fetch_assoc()) {
-                                echo"<h2>Name:".$row["username"]."   ,  Time Slot:".$row["time"]."   ,  Date:".$row["date"];
-                                "<br><br></h2>";
+                                echo"<h4>Name:".$row["username"]."   ,  Time Slot:".$row["time"]."   ,  Date:".$row["date"];
+                                "<br><br></h4>";
                             }
                         } else {
-                            echo"<h2>There Are No Appointments Today!</h2>";
+                            echo"<h4>There Are No Appointments Today!</h4>";
                         }
                      ?>
                 </div>
@@ -122,7 +121,7 @@
 
 
                 <div class="main">
-                    <h1 style="color:orange;">Mild Problem Patients</h1>
+                    <h2 style="color:green;">Mild Problem Patients</h2>
                     <?php
 
                        $today=date("Y-m-d");
@@ -132,11 +131,11 @@
                        $result=$conn->query($sql);
                        if ($result->num_rows>0) {
                            while ($row=$result->fetch_assoc()) {
-                               echo"<h2>Name:".$row["username"];
-                               "<br><br></h2>";
+                               echo"<h4>Name:".$row["username"];
+                               "<br><br></h4>";
                            }
                        } else {
-                           echo"<h2>There Are No Mild Problem Patients Today</h2>";
+                           echo"<h4>There Are No Mild Problem Patients Today</h4>";
                        }
                      ?>
 
@@ -150,15 +149,15 @@
                         $result=$conn->query($sql);
                         if ($result->num_rows>0) {
                             while ($row=$result->fetch_assoc()) {
-                                echo"<h2>Name:".$row["username"];
-                                "<br><br></h2>";
+                                echo"<h4>Name:".$row["username"];
+                                "<br><br></h4>";
                             }
                         } else {
-                            echo"<h2>There Are No Serious Problem Patients Today</h2>";
+                            echo"<h4>There Are No Serious Problem Patients Today</h4>";
                         }
                      ?>
 
-                    <h1 style="color:orange;">Emergency Problem Patients</h1>
+                    <h1 style="color:red;">Emergency Problem Patients **</h1>
                     <?php
 
                         $today=date("Y-m-d");
@@ -168,11 +167,11 @@
                         $result=$conn->query($sql);
                         if ($result->num_rows>0) {
                             while ($row=$result->fetch_assoc()) {
-                                echo"<h2>Name:".$row["username"];
-                                "<br><br></h2>";
+                                echo"<h4>Name:".$row["username"];
+                                "<br><br></h4>";
                             }
                         } else {
-                            echo"<h2>There Are No Emergency Problem Patients Today</h2>";
+                            echo"<h4>There Are No Emergency Problem Patients Today</h4>";
                         
                         session_destroy();}
                      ?>

@@ -14,10 +14,24 @@
         $("#nav-placeholder").load("nav.html");
       });
     </script>
+    <style>
+        table {
+            border-collapse: separate;
+            width: 100%;
+            color: orange;
+            font-size: 25px;
+            border-color: white;
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -o-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
-    <img src="assets/images/logo.png" class="logo">
     <div id="nav-placeholder"></div>
     <h1 style="color:black;font-size: 45px;text-align:center;margin:30px;">Our Doctors Here!</h1>
     <div class="container">

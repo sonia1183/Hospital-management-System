@@ -19,8 +19,20 @@
     <style>
       .aa {
         width: 450px;
-        height: 400px;
+        height: 350px;
       }
+      .aa input[type="text"],
+      input[type="date"],
+      input[type="email"],
+      input[type="password"],
+      input[type="submit"],
+      input[type="phone"] {
+        width: 350px;
+        height: 50px;
+        border:0;
+        border-radius: 5px;
+        background-color: #baceeccb;
+}
     </style>
   </head>
 
@@ -29,9 +41,9 @@
 
     <div id="nav-placeholder"></div>
 
-    <div class="aa" style="background-color: rgba(0, 0, 0, 0.5)">
+    <div class="aa" style="border:2px solid black">
       <form method="post" action="LoginAsPatient.php">
-        <h1 style="color: skyblue">LOGIN AS PATIENT</h1>
+        <h1 style="color: red">LOGIN AS PATIENT</h1>
         <input
           type="text"
           name="uname"
@@ -47,9 +59,9 @@
           value="LOGIN"
           name="submit"
           class="btn_login"
-          style="background-color: skyblue"
+          style="background-color: red"
         />
-        <p style="font-size: 13px">
+        <p style="font-size: 13px; color:black;margin-top: 5px;">
           New User then,Click <a href="../signup/SignUpAsPatient.html">here</a> to Sign
           in.
         </p>

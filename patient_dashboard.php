@@ -66,7 +66,6 @@
 session_start();
 require "conn.php";
 ?>
-    <img src="assets/images/logo.png" class="logo">
     <div id="nav-placeholder"></div>
 
     <?php
