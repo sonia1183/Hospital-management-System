@@ -12,23 +12,22 @@
         .aa {
             margin: 0;
             margin-top: 30px;
-            height: 70%;
-            background-color: rgba(0, 0, 0, 0.5);
+            height: 90%;
 
         }
 
         .aa h1 {
-            color: orange;
+            color: green;
             font-size: 50px;
         }
 
         .aa p {
             text-decoration: none;
             display: block;
-            color: #f2f2f2;
+            color: black;
             font-size: 15px;
             font-family: sans-serif;
-            border-radius=10px;
+            border-radius:10px;
         }
 
         .div2 {
@@ -47,10 +46,19 @@
             height: 30px;
             border: 0;
             border-radius: 5px;
+            background-color:#baceeccb;
         }
 
         .container {
             margin-bottom: 30px;
+        }
+
+        table{
+            width:100%;
+            height:50%;
+        }
+        td{
+            padding:10px 10px;
         }
     </style>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -98,20 +106,23 @@ if (!isset($_SESSION["name"])) {
             <div class="aa col-md-8">
                 <h1>Book An Appointment Here!</h1>
                 <form action="appointment 2.php" method="post">
-                    <h5>Select Date : 
+
+                <table>
+                    <tr>
+                        <td><h5>Select Date :   </h5></td>
+                        <td>
                         <input type="text" name="date" placeholder="DD/MM/YYYY"
-                            onfocus="(this.type='date')" onblur="(this.type='text')" required>
-                        <br><br>
-                    </h5>
-
-                    <h5>Enter Username : 
-                        <input type="text" placeholder="Enter Username" 
+                            onfocus="(this.type='date')" onblur="(this.type='text')" required></td>
+                    </tr>
+                    <tr>
+                        <td> <h5>Enter Username : </h5></td>
+                        <td> <input type="text" placeholder="Enter Username" 
                         value="<?php $username = $_SESSION["name"];echo $username;?>" 
-                        name="username" required><br><br>
-                    </h5>
-
-                    <h5>Select Doctor : 
-                        <select name="doctor_name" class="doctor_list" required>
+                        name="username" required></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Select Doctor : </h5></td>
+                        <td><select name="doctor_name" class="doctor_list" required>
                             <?php
                                 $sql = "select * from doctors";
                                 $doc = mysqli_query($conn, $sql);
@@ -125,23 +136,31 @@ if (!isset($_SESSION["name"])) {
                             <?php
                             }
                             ?>
-                        </select>
-                    </h5><br>
+                        </select></td>
+                    </tr>
 
-                    <h5>Select Time Slot:</h5><br>
-                    <p><input type="radio" name="time" value="9-11">09.00 a.m-11.00 a.m &nbsp;
-                        <input type="radio" name="time" value="11-1">11.00 a.m-01.00 p.m &nbsp;
-                        <input type="radio" name="time" value="6-8">06.00 p.m-08.00 p.m &nbsp;
-                        <input type="radio" name="time" value="8-10">08.00 p.m-10.00 p.m<br>
+                    <tr>
+                        <td colspan="2"><h5>Select Time Slot:</h5></td>
+                    </tr>
 
-                    <h5>Select Disease Type:</h5><br>
-                    <p><input type="radio" name="disease" value="mild">Simple Problem &nbsp;
-                        <input type="radio" name="disease" value="serious">Serious Problems &nbsp;
-                        <input type="radio" name="disease" value="emergency">Very Emergency Problems<br><br>
-
-
-                        <input type="submit" value="submit" name="submit" style="background-color:skyblue;">
-                    </p>
+                    <tr>
+                        <td colspan="2"> <p><input type="radio" name="time" value="9-11">&nbsp;09.00 a.m-11.00 a.m &nbsp;
+                        <input type="radio" name="time" value="11-1">&nbsp;11.00 a.m-01.00 p.m &nbsp;
+                        <input type="radio" name="time" value="6-8">&nbsp;06.00 p.m-08.00 p.m &nbsp;
+                        <input type="radio" name="time" value="8-10">&nbsp;08.00 p.m-10.00 p.m</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><h5>Select Disease Type:</h5></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <p><input type="radio" name="disease" value="mild">&nbsp;Simple Problem &nbsp;
+                        <input type="radio" name="disease" value="serious">&nbsp;Serious Problems &nbsp;
+                        <input type="radio" name="disease" value="emergency">&nbsp;Very Emergency Problems</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="submit" name="submit" style="background-color:green;color:white;"></td>
+                    </tr>
+                </table>
                 </form>
             </div>
             <div class="col-md-4 div2">
@@ -192,7 +211,7 @@ $res = $conn->query($s);
 $r = $res->fetch_assoc();
 ?>
                         <a
-                            href="prescription upload/<?php echo $r['filename'] ?>"><img
+                            href="prescription_upload/<?php echo $r['filename'] ?>"><img
                                 src="assets/Images/prescription copy.jpg" height="380px" width="300px"></a>
                     </div>
                 </div>

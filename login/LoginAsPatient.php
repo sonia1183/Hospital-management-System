@@ -17,7 +17,7 @@ if (isset($_POST['uname'])) {
         // header('location:'.$url);
         header("location:../patient_dashboard.php?pname=".$uname);
     } else {
-        echo"<script type='text/javascript'>window.alert('Invalid Username or Password');window.location='login/LoginAsPatient.html';</script>";
+        echo"<script type='text/javascript'>window.alert('Invalid Username or Password');window.location='LoginAsPatient.html';</script>";
     }
 }
 ?>

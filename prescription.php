@@ -12,7 +12,7 @@ $prescription_path=$prescription['tmp_name'];
 
 
 
-$folder="prescription upload/";
+$folder="prescription_upload/";
 move_uploaded_file($prescription_path, $folder.$prescription_name);
 $today=date("Y-m-d");
 $query="SELECT * FROM prescription WHERE name='$name'";

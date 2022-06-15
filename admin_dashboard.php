@@ -42,9 +42,9 @@
         font-size: xx-large;
     }
 
-    h4 {
+    /* h4 {
         padding-left:20px;
-    }
+    } */
 
     .upload h1 {
         color: black;
@@ -99,6 +99,7 @@
             <div class="col-md-8">
                 <div class="main">
                     <h1>Today's Appointments:</h1>
+                    <ol>
                     <?php
                                         
                         require "conn.php";
@@ -109,19 +110,26 @@
                         
                         if ($result->num_rows>0) {
                             while ($row=$result->fetch_assoc()) {
-                                echo"<h4>Name:".$row["username"]."   ,  Time Slot:".$row["time"]."   ,  Date:".$row["date"];
-                                "<br><br></h4>";
+                                echo"<li><b><i>Patient Details : </i></b>
+                                <ul>
+                                <li><strong>Name : </strong>".$row["username"]."</li>
+                                <li><strong>Time Slot : </strong>".$row["time"]."</li>
+                                <li><strong>Date : </strong>".$row["date"]."</li>
+                                </ul>
+                                </li>";
                             }
                         } else {
                             echo"<h4>There Are No Appointments Today!</h4>";
                         }
                      ?>
+                     </ol>
                 </div>
 
 
 
                 <div class="main">
                     <h2 style="color:green;">Mild Problem Patients</h2>
+                    <ol>
                     <?php
 
                        $today=date("Y-m-d");
@@ -131,15 +139,16 @@
                        $result=$conn->query($sql);
                        if ($result->num_rows>0) {
                            while ($row=$result->fetch_assoc()) {
-                               echo"<h4>Name:".$row["username"];
-                               "<br><br></h4>";
+                               echo"<li><strong>Name : </strong>".$row["username"];
+                               "</li>";
                            }
                        } else {
                            echo"<h4>There Are No Mild Problem Patients Today</h4>";
                        }
                      ?>
-
+                     </ol>
                     <h1 style="color:orange;">Serious Problem Patients</h1>
+                    <ol>
                     <?php
 
                         $today=date("Y-m-d");
@@ -149,15 +158,16 @@
                         $result=$conn->query($sql);
                         if ($result->num_rows>0) {
                             while ($row=$result->fetch_assoc()) {
-                                echo"<h4>Name:".$row["username"];
-                                "<br><br></h4>";
+                                echo"<li><strong>Name : </strong>".$row["username"];
+                               "</li>";
                             }
                         } else {
                             echo"<h4>There Are No Serious Problem Patients Today</h4>";
                         }
                      ?>
-
+                     </ol>
                     <h1 style="color:red;">Emergency Problem Patients **</h1>
+                    <ol>
                     <?php
 
                         $today=date("Y-m-d");
@@ -167,14 +177,15 @@
                         $result=$conn->query($sql);
                         if ($result->num_rows>0) {
                             while ($row=$result->fetch_assoc()) {
-                                echo"<h4>Name:".$row["username"];
-                                "<br><br></h4>";
+                                echo"<li><strong>Name : </strong>".$row["username"];
+                                "</li>";
                             }
                         } else {
                             echo"<h4>There Are No Emergency Problem Patients Today</h4>";
                         
                         session_destroy();}
                      ?>
+                     </ol>
                 </div>
             </div>
             <div class="upload col-md-4">
@@ -187,7 +198,7 @@
                     </p>
                     <input type="file" name="prescription" value="Upload Prescription"><br><br>
 
-                    <center><input type="submit" value="Upload" name="upload"></center>
+                    <center><input type="submit" value="Upload" name="upload" style="background-color:green;color:white;"></center>
                 </form>
             </div>
         </div>
