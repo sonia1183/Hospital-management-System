@@ -24,27 +24,15 @@
     <script>
       $(document).ready(function () {
         $("#nav-placeholder").load("nav.html");
+        $("#slider-placeholder").load("slider.html");
       });
-      $("#header-img > img:gt(0)").hide();
-      setInterval(function() { 
-      $('#header-img > img:first')
-      .fadeOut(1000)
-      .next()
-    .fadeIn(1000)
-    .end()
-    .appendTo('header-img');
-      }, 3000);
     </script>
   </head>
 
   <body>
     <div id="nav-placeholder"></div>
-
     <div>
-
-      <div id="header">
-        <img src="assets/Images/c1.jpg" alt="" id="header-img">
-      </div>
+      <div id="slider-placeholder" style="margin-top: 20px;"></div>
 
       <a href="appointment 1.php"
         ><img class="app" src="assets/Images/appointment1.png"
@@ -54,8 +42,8 @@
     <div class="container main">
       <div class="row">
         <div class="col-md-4">
-          <div class="why">
-            <h2>Why Medical Care?</h2>
+          <div class="why" style="background-color: rgba(0, 128, 255, 0.8);color: black;">
+            <h2 style="color:green ;">Why Medical Care?</h2>
             <ul>
               <h4>
                 <li>Highly Qualified Doctors Available</li>
